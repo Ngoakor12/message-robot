@@ -1,0 +1,31 @@
+name: message robot
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # morning
+    - cron: "50 06 * * *"
+    # afternoon
+    - cron: "50 10 * * *"
+    # evening
+    - cron: "50 15 * * *"
+  workflow_dispatch:
+
+#env:
+  #SMTP_SERVER: ${{secrets.SMTP_SERVER}}
+  #SMTP_PORT: ${{secrets.SMTP_PORT}}
+  #SMTP_LOGIN: ${{secrets.SMTP_LOGIN}}
+  #SMTP_PASSWORD: ${{secrets.SMTP_PASSWORD}}
+
+jobs:
+  send-messages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - run: npm ci
+      - run: node -v
+      #- run: npm run send_inspiration ngoakor12@gmail.com
