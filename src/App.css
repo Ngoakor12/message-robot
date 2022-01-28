@@ -25,17 +25,51 @@ nav ul li a {
 
 .App {
   display: flex;
-  /* grid-template-columns: 222px minmax(300px, 700px); */
-  /* padding: 20px; */
-  min-width: 750px;
+  flex-direction: column;
+  max-width: 100%;
+  position: relative;
+}
+
+.main-header {
+  /* padding: 0 30px; */
+  height: 60px;
+  width: 100%;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  /* min-width: 90vw; */
+  z-index: 1;
+}
+
+.main-content {
+  margin-top: 60px;
+  width: 100%;
+  /* position: relative; */
+}
+
+.menu-icon,
+.menu-avatar {
+  margin: 0 30px;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.menu-icon:hover,
+.menu-avatar:hover {
+  background-color: #dd553d;
 }
 
 .nav {
-  width: 20%;
   display: flex;
   justify-content: space-between;
   padding: 30px;
   min-height: 100vh;
+  display: none;
+  /* position: sticky;
+  top: 60px; */
 }
 
 .nav ul {
@@ -52,43 +86,39 @@ nav ul li a {
   justify-content: space-between;
 }
 
-.nav-item:hover{
+.nav-item:hover {
   background-color: #f1f1f1;
   border-radius: 8px;
 }
 
-.item-icon{
+.item-icon {
   padding-right: 8px;
 }
 
-
 .main {
-  width: 80%;
-  /* max-width: 600px; */
   padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f1f1f1;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  position: sticky;
+  top: 0;
+  /* overflow: scroll;
+  position: static; */
 }
 
 .main > * {
-  min-width: 700px;
-}
-.messages {
-  /* display: flex; */
+  width: 100%;
 }
 
 .today-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* min-width: 700px; */
+  flex-direction: column;
   margin-bottom: 50px;
 }
 
-.heading-title{
+.heading-title {
   font-size: 36px;
   padding-right: 20px;
 }
@@ -98,7 +128,7 @@ nav ul li a {
   align-items: center;
 }
 
-.schedule-message{
+.schedule-message {
   background-color: #1b1b1b;
   border: 0;
   border-radius: 8px;
@@ -107,22 +137,141 @@ nav ul li a {
   font-weight: 700;
   cursor: pointer;
   font-size: 18px;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
 }
 
-.messages{
+.messages {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  gap:20px;
+  gap: 20px;
 }
 
-.message{
-  /* background-color: #ffffff; */
+.message {
   border: 1px solid #d3d3d3;
   border-radius: 8px;
-  padding:25px;
+  padding: 25px;
   font-size: 18px;
 }
-.message h2{
+
+.message h2 {
   font-size: 18px;
+}
+
+@media (min-width: 550px) {
+  
+  .today-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+  .schedule-message {
+    position: static;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  /* .App {
+    flex-direction: row;
+    min-width: 750px;
+  } */
+  
+  .main-content {
+    display: flex;
+    /* margin-top: 60px; */
+    width: 100%;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .nav {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    /* min-height: 100vh; */
+    
+  }
+
+  .nav ul {
+    width: 100%;
+  }
+
+  .nav ul li a {
+    padding: 8px 14px;
+  }
+
+  .nav ul li a {
+    color: #1b1b1b;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-item:hover {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+  }
+
+  .item-icon {
+    padding-right: 8px;
+  }
+
+  .main {
+    width: 80%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1;
+    /* min-height: 100vh; */
+    overflow-y: scroll;
+  }
+
+  .main > * {
+    max-width: 800px;
+  }
+
+  .heading-title {
+    font-size: 36px;
+    padding-right: 20px;
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .schedule-message {
+    background-color: #1b1b1b;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 30px;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .message {
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 25px;
+    font-size: 18px;
+  }
+
+  .message h2 {
+    font-size: 18px;
+  }
 }
