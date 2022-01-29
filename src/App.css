@@ -101,11 +101,6 @@ nav ul li a {
   flex-direction: column;
   align-items: center;
   background-color: #f1f1f1;
-  /* min-height: 100vh; */
-  position: sticky;
-  top: 0;
-  /* overflow: scroll;
-  position: static; */
 }
 
 .main > * {
@@ -161,13 +156,12 @@ nav ul li a {
 }
 
 @media (min-width: 550px) {
-  
   .today-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
   .schedule-message {
     position: static;
@@ -176,18 +170,9 @@ nav ul li a {
 }
 
 @media (min-width: 900px) {
-  /* .App {
-    flex-direction: row;
-    min-width: 750px;
-  } */
-  
   .main-content {
     display: flex;
-    /* margin-top: 60px; */
-    width: 100%;
-    position: sticky;
-    top: 0;
-    overflow: hidden;
+    gap: 0;
   }
 
   .nav {
@@ -195,8 +180,10 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     padding: 30px;
-    /* min-height: 100vh; */
-    
+    position: fixed;
+    left: 0;
+    background-color: white;
+    z-index: 2;
   }
 
   .nav ul {
@@ -229,22 +216,25 @@ nav ul li a {
     flex-direction: column;
     align-items: center;
     background-color: #f1f1f1;
-    /* min-height: 100vh; */
-    overflow-y: scroll;
+    margin-left: 25%;
+    position: sticky;
+    top: 60px;
   }
 
   .main > * {
     max-width: 800px;
   }
 
+  .today-header {
+    position: fixed;
+    top: 60px;
+    background-color: #f1f1f1;
+    padding: 25px 30px 30px 25px;
+  }
+
   .heading-title {
     font-size: 36px;
     padding-right: 20px;
-  }
-
-  .header-title {
-    display: flex;
-    align-items: center;
   }
 
   .schedule-message {
@@ -259,16 +249,12 @@ nav ul li a {
   }
 
   .messages {
-    display: flex;
-    flex-direction: column;
     gap: 20px;
-  }
-
-  .message {
-    border: 1px solid #d3d3d3;
+    border: 0;
     border-radius: 8px;
     padding: 25px;
     font-size: 18px;
+    margin-top: 75px;
   }
 
   .message h2 {
