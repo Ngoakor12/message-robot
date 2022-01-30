@@ -47,7 +47,7 @@ nav ul li a {
 .main-content {
   margin-top: 60px;
   width: 100%;
-  /* position: relative; */
+  position: relative;
 }
 
 .menu-icon,
@@ -67,13 +67,19 @@ nav ul li a {
   justify-content: space-between;
   padding: 30px;
   min-height: 100vh;
-  display: none;
-  /* position: sticky;
-  top: 60px; */
+  position: fixed;
+  top: 60px;
+  left: 0;
+  background-color: white;
+  width: 100%;
+}
+
+.closed{
+  visibility: hidden;
 }
 
 .nav ul {
-  width: 100%;
+  width: 90%;
 }
 
 .nav ul li a {
@@ -148,11 +154,18 @@ nav ul li a {
   border: 1px solid #d3d3d3;
   border-radius: 8px;
   padding: 25px;
-  font-size: 18px;
+  display: flex;
+  gap: 10px;
 }
 
 .message h2 {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.message-date-time{
+  font-size: 13px;
+
 }
 
 @media (min-width: 550px) {
@@ -186,6 +199,9 @@ nav ul li a {
     z-index: 2;
   }
 
+  .closed{
+    visibility: visible;
+  }
   .nav ul {
     width: 100%;
   }
@@ -255,9 +271,5 @@ nav ul li a {
     padding: 25px;
     font-size: 18px;
     margin-top: 75px;
-  }
-
-  .message h2 {
-    font-size: 18px;
   }
 }
