@@ -56,7 +56,7 @@ function App() {
           <header className="today-header">
             <div className="header-title">
               <h1 className="heading-title">Today</h1>
-              <span>23 Jan Mon</span>
+              <span className="heading-title-date">23 Jan Mon</span>
             </div>
             <button className="schedule-message">
               <span className="schedule-message-icon">📝</span>Schedule message
