@@ -1,10 +1,13 @@
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
 import users from "./mock-data";
 import Header from "./components/Header";
-
-import { useState } from "react";
 import Navigation from "./components/Navigation";
 import Today from "./components/Today";
+import AllMessages from "./components/AllMessages";
+import Drafts from "./components/Drafts";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +23,17 @@ function App() {
       <Header toggleIsMenuOpen={toggleIsMenuOpen} />
       <section className="main-content">
         <Navigation isMenuOpen={isMenuOpen} />
-        <Today currentUser={currentUser} />
+        <Routes>
+          <Route exact path="/" element={<Today currentUser={currentUser} />} />
+          <Route
+            path="/all-messages"
+            element={<AllMessages currentUser={currentUser} />}
+          />
+          <Route
+            path="/drafts"
+            element={<Drafts currentUser={currentUser} />}
+          />
+        </Routes>
       </section>
     </div>
   );
