@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Navigation({ isMenuOpen }) {
+function Navigation({ isMenuOpen, setIsMenuOpen }) {
   const initialNavItems = [
     {
       text: "Today",
@@ -25,14 +25,36 @@ function Navigation({ isMenuOpen }) {
       messageCount: 0,
     },
   ];
-  const [navItems, setNavItems] = useState(initialNavItems);
+  const [navItems, setNavItems] = useState(() => initialNavItems);
+
+  function setActiveTab(path) {
+    setNavItems((prevNavItems) => {
+      return prevNavItems.map((item) => {
+        if (item.path === path) {
+          return {
+            ...item,
+            isActive: true,
+          };
+        } else {
+          return {
+            ...item,
+            isActive: false,
+          };
+        }
+      });
+    });
+    setIsMenuOpen(false);
+  }
 
   return (
     <nav className={`nav ${!isMenuOpen && "closed"}`}>
       <ul>
         {navItems.map((item) => {
           return (
-            <li className={`nav-item ${item.isActive ? "active-tab" : ""}`}>
+            <li
+              className={`nav-item ${item.isActive ? "active-nav-tab" : ""}`}
+              onClick={() => setActiveTab(item.path)}
+            >
               <Link to={item.path}>
                 <span className="item-title">
                   <span className="item-icon">{item.icon}</span>

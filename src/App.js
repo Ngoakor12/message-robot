@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Header toggleIsMenuOpen={toggleIsMenuOpen} />
       <section className="main-content">
-        <Navigation isMenuOpen={isMenuOpen} />
+        <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <Routes>
           <Route exact path="/" element={<Today currentUser={currentUser} />} />
           <Route

@@ -75,6 +75,11 @@ nav ul li a {
   z-index: 2;
 }
 
+.active-nav-tab {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
 .closed {
   visibility: hidden;
 }
