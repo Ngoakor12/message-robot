@@ -178,6 +178,19 @@ nav ul li a {
   font-size: 12px;
 }
 
+/* SCHEDULE MESSAGE */
+
+#form{
+  display: flex;
+  flex-direction: column;
+}
+
+#form section{
+  display: flex;
+  flex-direction: column;
+
+}
+
 @media (min-width: 550px) {
   .today-header {
     display: flex;

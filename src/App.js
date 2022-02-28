@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Today from "./components/Today";
 import AllMessages from "./components/AllMessages";
 import Drafts from "./components/Drafts";
+import ScheduleMessage from "./components/ScheduleMessage";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +33,10 @@ function App() {
           <Route
             path="/drafts"
             element={<Drafts currentUser={currentUser} />}
+          />
+          <Route
+            path="/schedule-message"
+            element={<ScheduleMessage currentUser={currentUser} />}
           />
         </Routes>
       </section>
