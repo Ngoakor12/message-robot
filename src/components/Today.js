@@ -1,3 +1,5 @@
+import ScheduleMessageButton from "./ScheduleMessageButton";
+
 function Today({ currentUser }) {
   return (
     <main className="main">
@@ -6,9 +8,7 @@ function Today({ currentUser }) {
           <h1 className="heading-title">Today</h1>
           <span className="heading-title-date">23 Jan Mon</span>
         </div>
-        <button className="schedule-message">
-          <span className="schedule-message-icon">📝</span>Schedule message
-        </button>
+        <ScheduleMessageButton/>
       </header>
       <section className="messages">
         {currentUser.messages.map((message) => {
