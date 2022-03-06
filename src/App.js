@@ -11,23 +11,21 @@ import Drafts from "./components/Drafts";
 import ScheduleMessage from "./components/ScheduleMessage";
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  function toggleIsMenuOpen() {
-    setIsMenuOpen((prevState) => !prevState);
-  }
-
   const currentUser = users.find((user) => user.name === "Ngoako");
 
   return (
     <div className="App">
-      <Header toggleIsMenuOpen={toggleIsMenuOpen} />
+      <Header />
       <section className="main-content">
-        <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <Navigation />
         <Routes>
-          <Route exact path="/" element={<Today currentUser={currentUser} />} />
           <Route
-            path="/all-messages"
+            exact
+            path="/today"
+            element={<Today currentUser={currentUser} />}
+          />
+          <Route
+            path="/messages"
             element={<AllMessages currentUser={currentUser} />}
           />
           <Route
@@ -35,7 +33,7 @@ function App() {
             element={<Drafts currentUser={currentUser} />}
           />
           <Route
-            path="/schedule-message"
+            path="/schedule"
             element={<ScheduleMessage currentUser={currentUser} />}
           />
         </Routes>
