@@ -2,7 +2,8 @@ import ScheduleMessageButton from "./ScheduleMessageButton";
 
 function Today({ currentUser }) {
   return (
-    <main className="main">
+    <>
+     {/* <main className="main"> */}
       <header className="today-header">
         <div className="header-title">
           <h1 className="heading-title">Today</h1>
@@ -27,7 +28,8 @@ function Today({ currentUser }) {
           );
         })}
       </section>
-    </main>
+     {/* </main> */}
+    </>
   );
 }
 
