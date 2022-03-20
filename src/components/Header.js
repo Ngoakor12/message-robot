@@ -1,10 +1,12 @@
-function Header({ toggleIsMenuOpen }) {
+import { ReactComponent as MenuIcon } from "../assets/MdiMenu.svg";
+
+function Header() {
   return (
     <header className="main-header">
-      <span className="menu-icon" onClick={toggleIsMenuOpen}>
-        🍔
-      </span>
-      <span className="menu-avatar">👦🏾</span>
+      <button className="menu-icon">
+        <MenuIcon />
+      </button>
+      <span className="menu-avatar">avatar</span>
     </header>
   );
 }
