@@ -14,3 +14,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root{
+  --dark-gray:#333333;
+  --light-gray:#FAFAFA;
+  --border-radius:10px;
+}
+
+.App{
+  display: grid;
+  /* color: red; */
+}
+
+.main-header{
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color:#FAFAFA;
+  background: none;
+  border: 1px solid var(--light-gray);
+  width: 37px;
+  height: 37px;
+  border-radius: var(--border-radius);
+}
+
+.navigation{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.navigation a{
+  display: flex;
+  align-items: center;
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+
+.navigation a  svg{
+  width: 24px;
+}

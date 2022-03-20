@@ -5,21 +5,21 @@ import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
 
 function Navigation({ isMenuOpen, setIsMenuOpen }) {
   return (
-    <nav>
+    <nav className="navigation">
       <NavLink to="/today">
-        <span>
+        <span className="nav-icon">
           <TodayIcon />
         </span>
         Today
       </NavLink>
       <NavLink to="/messages">
-        <span>
+        <span className="nav-icon">
           <AllMessagesIcon />
         </span>
         All Messages
       </NavLink>
       <NavLink to="/drafts">
-        <span>
+        <span className="nav-icon">
           <DraftsIcon />
         </span>
         Drafts
