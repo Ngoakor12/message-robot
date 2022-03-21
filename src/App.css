@@ -4,11 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  font-size: 18px;
 }
 
 code {
@@ -25,12 +30,20 @@ code {
   --border-radius: 10px;
 }
 
-.App {
-  /* display: grid; */
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* min-height: 100vh; */
+  /* grid-template-columns: 2; */
+  /* grid-template-rows: 2; */
   /* color: red; */
 }
 
 .main-header {
+  /* display: grid; */
+  grid-area: "header";
+  grid-template-columns: span 2;
   color: var(--light-gray);
   background-color: var(--dark-gray);
   min-height: 75px;
@@ -51,15 +64,23 @@ code {
   border-radius: var(--border-radius);
 }
 
+.main {
+  display: flex;
+  width: 100%;
+}
+
 .navigation {
   background-color: var(--background-2);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  min-width: 350px;
   max-width: 350px;
   gap: 4px;
   border-right: 1px solid var(--border-1);
+  padding: 40px 0;
+  min-height: calc(100vh - 75px);
 }
 
 .nav-item {
@@ -108,4 +129,58 @@ code {
 
 .active-nav .message-count {
   font-weight: 400;
+}
+
+.schedule-message-btn {
+  font-weight: 700;
+  color: var(--background-1);
+  background-color: var(--dark-gray);
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: var(--border-radius);
+}
+
+.main-section {
+  width: 100%;
+  padding: 40px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading-left {
+  display: flex;
+  align-items: center;
+}
+
+.heading-title {
+  font-size: 3.6rem;
+  margin-right: 20px;
+}
+
+.horizontal-divider {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-color: var(--border-1);
+  margin: 20px 0px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message {
+  display: flex;
+  padding: 30px;
+  border: 1px solid var(--border-1);
+  border-radius: var(--border-radius);
+}
+.message h2 {
+  font-size: 1.8rem;
 }

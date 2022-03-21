@@ -11,14 +11,16 @@ function Home() {
   return (
     <>
       <Header />
-      <Navigation />
-      <main className="messages">
-        <Routes>
-          <Route exact path="/today" element={<Today />} />
-          <Route path="/messages" element={<AllMessages />} />
-          <Route path="/drafts" element={<Drafts />} />
-          <Route path="/schedule" element={<ScheduleMessage />} />
-        </Routes>
+      <main className="main">
+        <Navigation />
+        <section className="main-section">
+          <Routes>
+            <Route exact path="/today" element={<Today />} />
+            <Route path="/messages" element={<AllMessages />} />
+            <Route path="/drafts" element={<Drafts />} />
+            <Route path="/schedule" element={<ScheduleMessage />} />
+          </Routes>
+        </section>
       </main>
     </>
   );
