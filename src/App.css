@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -15,18 +16,21 @@ code {
     monospace;
 }
 
-:root{
-  --dark-gray:#333333;
-  --light-gray:#FAFAFA;
-  --border-radius:10px;
+:root {
+  --dark-gray: #333333;
+  --light-gray: #fafafa;
+  --background-1: #ffffff;
+  --background-2: #fafafa;
+  --border-1: #e6e6e6;
+  --border-radius: 10px;
 }
 
-.App{
-  display: grid;
+.App {
+  /* display: grid; */
   /* color: red; */
 }
 
-.main-header{
+.main-header {
   color: var(--light-gray);
   background-color: var(--dark-gray);
   min-height: 75px;
@@ -35,11 +39,11 @@ code {
   justify-content: space-between;
 }
 
-.menu-icon{
+.menu-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color:#FAFAFA;
+  color: #fafafa;
   background: none;
   border: 1px solid var(--light-gray);
   width: 37px;
@@ -47,19 +51,61 @@ code {
   border-radius: var(--border-radius);
 }
 
-.navigation{
+.navigation {
+  background-color: var(--background-2);
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  gap: 4px;
+  border-right: 1px solid var(--border-1);
 }
 
-.navigation a{
+.nav-item {
+  border: 1px solid var(--border-1);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  text-decoration: none;
+  color: var(--dark-gray);
+  display: flex;
+  justify-content: space-between;
+  min-width: 267px;
+  max-width: 267px;
+  /* font-weight: 700; */
+  background: none;
+}
+
+.nav-item:hover {
+  font-weight: 700;
+  background-color: var(--background-1);
+}
+
+.nav-item:hover .message-count {
+  font-weight: 400;
+}
+
+.nav-item-left {
   display: flex;
   align-items: center;
-  color: var(--dark-gray);
-  text-decoration: none;
 }
 
-.navigation a  svg{
+.nav-icon {
+  display: flex;
   width: 24px;
+  margin-right: 10px;
+}
+
+.message-count {
+  display: flex;
+  align-items: center;
+}
+
+.active-nav {
+  font-weight: 700;
+  background-color: var(--background-1);
+}
+
+.active-nav .message-count {
+  font-weight: 400;
 }

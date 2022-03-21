@@ -6,23 +6,47 @@ import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
 function Navigation({ isMenuOpen, setIsMenuOpen }) {
   return (
     <nav className="navigation">
-      <NavLink to="/today">
-        <span className="nav-icon">
-          <TodayIcon />
+      <NavLink
+        to="/today"
+        className={({ isActive }) =>
+          isActive ? "nav-item active-nav" : "nav-item"
+        }
+      >
+        <span className="nav-item-left">
+          <span className="nav-icon">
+            <TodayIcon />
+          </span>
+          Today
         </span>
-        Today
+        <span className="message-count">4</span>
       </NavLink>
-      <NavLink to="/messages">
-        <span className="nav-icon">
-          <AllMessagesIcon />
+      <NavLink
+        to="/messages"
+        className={({ isActive }) =>
+          isActive ? "nav-item active-nav" : "nav-item"
+        }
+      >
+        <span className="nav-item-left">
+          <span className="nav-icon">
+            <AllMessagesIcon />
+          </span>
+          All Messages
         </span>
-        All Messages
+        <span className="message-count">10</span>
       </NavLink>
-      <NavLink to="/drafts">
-        <span className="nav-icon">
-          <DraftsIcon />
+      <NavLink
+        to="/drafts"
+        className={({ isActive }) =>
+          isActive ? "nav-item active-nav" : "nav-item"
+        }
+      >
+        <span className="nav-item-left">
+          <span className="nav-icon">
+            <DraftsIcon />
+          </span>
+          Drafts
         </span>
-        Drafts
+        <span className="message-count">10</span>
       </NavLink>
     </nav>
   );
