@@ -5,7 +5,7 @@ import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
 
 function Navigation({ isMenuOpen, setIsMenuOpen }) {
   return (
-    <nav className="navigation">
+    <nav className="navigation active-navigation">
       <NavLink
         to="/today"
         className={({ isActive }) =>

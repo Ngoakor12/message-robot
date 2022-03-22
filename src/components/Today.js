@@ -24,6 +24,21 @@ function Today() {
         <div className="message">
           <h2>Mom's birthday</h2>
         </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
       </section>
     </>
   );
