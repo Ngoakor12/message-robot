@@ -2,15 +2,17 @@ import { NavLink } from "react-router-dom";
 import { ReactComponent as TodayIcon } from "../assets/IcRoundToday.svg";
 import { ReactComponent as AllMessagesIcon } from "../assets/IcRoundMessage.svg";
 import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
+import ScheduleMessageButton from "./ScheduleMessageButton";
 
-function Navigation({ isMenuOpen, setIsMenuOpen }) {
+function Navigation({ isMenuOpen, closeNav }) {
   return (
-    <nav className="navigation active-navigation">
+    <nav className={isMenuOpen ? "navigation active-navigation" : "navigation"}>
       <NavLink
         to="/today"
         className={({ isActive }) =>
           isActive ? "nav-item active-nav" : "nav-item"
         }
+        onClick={closeNav}
       >
         <span className="nav-item-left">
           <span className="nav-icon">
@@ -25,6 +27,7 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
         className={({ isActive }) =>
           isActive ? "nav-item active-nav" : "nav-item"
         }
+        onClick={closeNav}
       >
         <span className="nav-item-left">
           <span className="nav-icon">
@@ -39,6 +42,7 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
         className={({ isActive }) =>
           isActive ? "nav-item active-nav" : "nav-item"
         }
+        onClick={closeNav}
       >
         <span className="nav-item-left">
           <span className="nav-icon">

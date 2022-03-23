@@ -1,6 +1,4 @@
-import ScheduleMessageButton from "./ScheduleMessageButton";
-
-function ScheduleMessage({ currentUser }) {
+function ScheduleMessage() {
   return (
     <main className="main">
       <header className="today-header">

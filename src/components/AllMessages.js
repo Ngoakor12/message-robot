@@ -8,7 +8,7 @@ function AllMessages() {
           <h1 className="heading-title">All Messages</h1>
           <span className="heading-title-date">23 Jan Mon</span>
         </div>
-        <ScheduleMessageButton />
+        <ScheduleMessageButton buttonPosition="main-section-btn" />
       </header>
       <hr className="horizontal-divider" />
       <section className="messages">
@@ -25,6 +25,7 @@ function AllMessages() {
           <h2>Mom's birthday</h2>
         </div>
       </section>
+      <ScheduleMessageButton buttonPosition="bottom-section-btn" />
     </>
   );
 }
