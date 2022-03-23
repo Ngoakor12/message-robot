@@ -1,11 +1,12 @@
 function ScheduleMessage() {
   return (
-    <main className="main">
-      <header className="today-header">
-        <div className="header-title">
-          <h1 className="heading-title">Schedule message</h1>
+    <>
+      <header className="heading">
+        <div className="heading-left">
+          <h1 className="heading-title">Schedule messages</h1>
         </div>
       </header>
+      <hr className="horizontal-divider" />
       <section className="messages-form">
         <form id="form">
           <section>
@@ -41,7 +42,7 @@ function ScheduleMessage() {
           </section>
         </form>
       </section>
-    </main>
+    </>
   );
 }
 

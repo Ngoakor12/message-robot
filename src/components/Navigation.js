@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { ReactComponent as TodayIcon } from "../assets/IcRoundToday.svg";
 import { ReactComponent as AllMessagesIcon } from "../assets/IcRoundMessage.svg";
 import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
-import ScheduleMessageButton from "./ScheduleMessageButton";
+// import ScheduleMessageButton from "./ScheduleMessageButton";
 
 function Navigation({ isMenuOpen, closeNav }) {
   return (

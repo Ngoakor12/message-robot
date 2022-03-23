@@ -4,14 +4,15 @@ import Today from "./Today";
 import AllMessages from "./AllMessages";
 import Drafts from "./Drafts";
 import ScheduleMessage from "./ScheduleMessage";
-import ScheduleMessageButton from "./ScheduleMessageButton";
 
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import RecipientForm from "./SheduleMessage/RecipientForm";
+import MessageForm from "./SheduleMessage/MessageForm";
+import DateAndTimeForm from "./SheduleMessage/DateAndTimeForm";
 
 function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [buttonPosition, seButtonPosition] = useState("main");
 
   function toggleNavMenu() {
     setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
@@ -19,8 +20,6 @@ function Home() {
   function closeNav() {
     setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
   }
-
-  console.log(isMenuOpen);
 
   return (
     <>
@@ -37,6 +36,9 @@ function Home() {
             <Route path="/messages" element={<AllMessages />} />
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/schedule" element={<ScheduleMessage />} />
+            <Route path="/schedule/recipient" element={<RecipientForm />} />
+            <Route path="/schedule/message" element={<MessageForm />} />
+            <Route path="/schedule/time" element={<DateAndTimeForm />} />
           </Routes>
         </section>
       </main>

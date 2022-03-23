@@ -40,7 +40,10 @@ function Today() {
           <h2>Mom's birthday</h2>
         </div>
       </section>
-      <ScheduleMessageButton buttonPosition="bottom-section-btn" />
+      <ScheduleMessageButton
+        buttonPosition="bottom-section-btn"
+        to={"/schedule/recipient"}
+      />
     </>
   );
 }

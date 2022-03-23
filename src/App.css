@@ -14,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   font-size: 18px;
+  color: var(--dark-gray);
 }
 
 code {
@@ -28,6 +29,7 @@ code {
   --background-2: #fafafa;
   --border-1: #e6e6e6;
   --border-radius: 10px;
+  --border-radius-2: 8px;
 }
 
 #root {
@@ -175,11 +177,13 @@ code {
 .heading-left {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .heading-title {
   font-size: 3.6rem;
   margin-right: 20px;
+  line-height: 115%;
 }
 
 .horizontal-divider {
@@ -206,8 +210,126 @@ code {
   font-size: 1.8rem;
 }
 
+button{
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  
+}
+
+
+/* Forms */
+
+.schedule-messages-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-heading {
+  font-size: 2.4rem;
+  /* margin-bottom: 15px; */
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  height: 50px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border: 1px solid var(--dark-gray);
+  border-radius: var(--border-radius);
+}
+
+#email,#phone{
+  margin-right: 8px;
+}
+
+.form-text-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-name label,.recipient-contact-wrapper label,.form-text-wrapper> label{
+  font-weight: 700;
+}
+
+.form-contact-methods {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-name,
+.form-email-input,
+.form-phone-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cancel-btn{
+  font-weight: 700;
+  height: 47px;
+  padding: 0 25px;
+  background: none;
+  border: 0;
+  border: 3px solid var(--dark-gray);
+  border-radius: var(--border-radius);
+}
+
+.primary-btn{
+  color: var(--background-1);
+  background-color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: 700;
+  padding:10px 25px;
+  border: 0;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.secondary-btn{
+  display: flex;
+  align-items: center;
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: 700;
+  height: 47px;
+  padding:10px 25px;
+  background: none;
+  border: 0;
+  border: 3px solid var(--dark-gray);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
 /* Medium screens */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   .schedule-message-btn.main-section-btn {
     display: block;
   }
