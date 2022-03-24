@@ -74,6 +74,11 @@ code {
   position: relative;
   top: 75px;
 }
+.main-section{
+  display: flex;
+  /* align-items: center;
+  max-width: 1000px; */
+}
 
 .navigation {
   background-color: var(--background-2);
@@ -92,6 +97,10 @@ code {
 .active-navigation {
   display: flex;
   z-index: 20;
+}
+
+.remove-nav {
+  display: none;
 }
 
 .nav-item {
@@ -210,16 +219,14 @@ code {
   font-size: 1.8rem;
 }
 
-button{
+button {
   font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
-  
 }
-
 
 /* Forms */
 
-.schedule-messages-form{
+.schedule-messages-form {
   display: flex;
   flex-direction: column;
 }
@@ -250,24 +257,27 @@ input[type="text"],
 input[type="tel"],
 input[type="email"] {
   height: 50px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin-top: 10px;
   border: none;
   border: 1px solid var(--dark-gray);
   border-radius: var(--border-radius);
 }
 
-#email,#phone{
+#email,
+#phone {
   margin-right: 8px;
 }
 
-.form-text-wrapper{
+.form-text-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.form-name label,.recipient-contact-wrapper label,.form-text-wrapper> label{
+.form-name label,
+.recipient-contact-wrapper label,
+.form-text-wrapper > label {
   font-weight: 700;
 }
 
@@ -284,7 +294,7 @@ input[type="email"] {
   flex-direction: column;
 }
 
-.form-btns{
+.form-btns {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -292,7 +302,7 @@ input[type="email"] {
   flex-wrap: wrap;
 }
 
-.cancel-btn{
+.cancel-btn {
   font-weight: 700;
   height: 47px;
   padding: 0 25px;
@@ -302,25 +312,25 @@ input[type="email"] {
   border-radius: var(--border-radius);
 }
 
-.primary-btn{
+.primary-btn {
   color: var(--background-1);
   background-color: var(--dark-gray);
   text-decoration: none;
   font-weight: 700;
-  padding:10px 25px;
+  padding: 10px 25px;
   border: 0;
   border-radius: var(--border-radius);
   cursor: pointer;
 }
 
-.secondary-btn{
+.secondary-btn {
   display: flex;
   align-items: center;
   color: var(--dark-gray);
   text-decoration: none;
   font-weight: 700;
   height: 47px;
-  padding:10px 25px;
+  padding: 10px 25px;
   background: none;
   border: 0;
   border: 3px solid var(--dark-gray);
@@ -328,19 +338,93 @@ input[type="email"] {
   cursor: pointer;
 }
 
+.form-btns.main {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+.form-btns.exception {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.form-btns.main > * {
+  width: 100%;
+  justify-content: center;
+}
+.form-btns.exception > * {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.secondary-btn.cancel-btn{
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.top-secondary-btn{
+  display: flex;
+  align-items: center;
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: 700;
+  height: 47px;
+  padding: 10px 25px;
+  background: var(--background-1);
+  border: 0;
+  border: 3px solid var(--dark-gray);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  position: fixed;
+  align-self: flex-end;
+}
+
 /* Medium screens */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 630px) {
+  /* .form-btns.main{
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .form-btns.exception{
+    flex-direction: row;
+    justify-content: flex-start;
+  } */
+
+  /* .form-btns.exception>*{
+    display: flex;
+    justify-content: center;
+    width: auto;
+  } */
+}
+
+@media only screen and (min-width: 730px) {
   .schedule-message-btn.main-section-btn {
     display: block;
   }
   .schedule-message-btn.bottom-section-btn {
     display: none;
   }
+  .form-btns.main > * {
+    width: auto;
+  }
+  .form-btns.exception > * {
+    width: auto;
+    /* justify-content: center; */
+  }
+  .top-secondary-btn{
+    display: none;
+  }
+  .secondary-btn.cancel-btn{
+    display: block;
+  }
+  
 }
 
 /* Larger screens */
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 1020px) {
   #root {
     width: 100%;
     display: flex;
@@ -365,9 +449,16 @@ input[type="email"] {
   }
 
   .main-section {
-    max-width: 1000px;
+    max-width: 900px;
     width: 100%;
     margin-left: 350px;
+    min-height: calc(100vh - 75px);
+  }
+
+  .main-nav-removed {
+    max-width: 900px;
+    width: 100%;
+    margin-left: 0;
     min-height: calc(100vh - 75px);
   }
 }

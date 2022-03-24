@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 
-function RecipientForm() {
+function RecipientForm({ addNav, isNavRemoved }) {
   return (
     <>
       <header className="heading">
         <div className="heading-left">
           <h1 className="heading-title">Schedule message</h1>
         </div>
-        <button className="secondary-btn">Cancel</button>
+        <Link to="/today" className="secondary-btn cancel-btn" onClick={addNav}>
+          Cancel
+        </Link>
       </header>
       <hr className="horizontal-divider" />
       <section className="schedule-messages-form">
@@ -15,7 +17,7 @@ function RecipientForm() {
           <h2 className="form-heading">Recipient Details</h2>
           <section className="form-body">
             <div className="form-text-input form-name">
-              <label for="name">Name </label>
+              <label htmlFor="name">Name </label>
               <input type="text" id="name" placeholder="Name" />
             </div>
             <div className="form-text-wrapper">
@@ -28,7 +30,7 @@ function RecipientForm() {
                     id="email"
                     name="send-method"
                   />
-                  <label for="email">Email address </label>
+                  <label htmlFor="email">Email address </label>
                 </div>
                 <div className="form-text-input form-phone">
                   <input
@@ -37,7 +39,7 @@ function RecipientForm() {
                     id="phone"
                     name="send-method"
                   />
-                  <label for="phone">Phone number </label>
+                  <label htmlFor="phone">Phone number </label>
                 </div>
               </div>
             </div>
@@ -51,13 +53,20 @@ function RecipientForm() {
               </div> */}
             </div>
           </section>
-          <section className="form-btns">
+          <section className="form-btns exception">
             <Link to="/schedule/message" className="primary-btn">
               Next
             </Link>
           </section>
         </form>
       </section>
+      <Link
+        to="/today"
+        className="top-secondary-btn"
+        onClick={addNav}
+      >
+        Cancel
+      </Link>
     </>
   );
 }

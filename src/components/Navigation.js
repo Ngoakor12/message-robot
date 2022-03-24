@@ -4,9 +4,17 @@ import { ReactComponent as AllMessagesIcon } from "../assets/IcRoundMessage.svg"
 import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
 // import ScheduleMessageButton from "./ScheduleMessageButton";
 
-function Navigation({ isMenuOpen, closeNav }) {
+function Navigation({ isMenuOpen, closeNav, isNavRemoved }) {
   return (
-    <nav className={isMenuOpen ? "navigation active-navigation" : "navigation"}>
+    <nav
+      className={
+        isNavRemoved
+          ? "remove-nav"
+          : isMenuOpen
+          ? "navigation active-navigation"
+          : "navigation"
+      }
+    >
       <NavLink
         to="/today"
         className={({ isActive }) =>
