@@ -16,12 +16,18 @@ function MessageForm({ addNav }) {
         <form id="form">
           <h2 className="form-heading">Message</h2>
           <section className="form-body">
-            <label htmlFor="subject">Subject </label>
-            <input type="text" id="subject" name="subject" />
-            <label htmlFor="message">Message </label>
-            <input type="text" id="message" name="message" />
-            <label htmlFor="sender">From </label>
-            <input type="text" id="sender" name="sender" />
+            <div className="form-text-input form-subject">
+              <label htmlFor="subject">Subject </label>
+              <input type="text" id="subject" name="subject" />
+            </div>
+            <div className="form-text-input form-message">
+              <label htmlFor="message">Message </label>
+              <input type="text" id="message" name="message" />
+            </div>
+            <div className="form-text-input form-sender">
+              <label htmlFor="sender">From </label>
+              <input type="text" id="sender" name="sender" />
+            </div>
           </section>
           <section className="form-btns exception">
             <Link to="/schedule/time" className="primary-btn">
@@ -33,11 +39,7 @@ function MessageForm({ addNav }) {
           </section>
         </form>
       </section>
-      <Link
-        to="/today"
-        className="top-secondary-btn"
-        onClick={addNav}
-      >
+      <Link to="/today" className="top-secondary-btn" onClick={addNav}>
         Cancel
       </Link>
     </>

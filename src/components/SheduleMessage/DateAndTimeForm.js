@@ -16,12 +16,16 @@ function DateAndTimeForm({ addNav }) {
         <form id="form">
           <h2 className="form-heading">Date and Time</h2>
           <section className="form-body">
-            <label htmlFor="date">Date </label>
-            <input type="date" id="date" name="date" />
-            <label htmlFor="time">Time </label>
-            <input type="time" id="time" name="time" />
+            <div className="form-date">
+              <label htmlFor="date">Date </label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div className="form-time">
+              <label htmlFor="time">Time </label>
+              <input type="time" id="time" name="time" />
+            </div>
           </section>
-          <section className="form-btns main">
+          <section className="form-btns normal">
             <button className="primary-btn">Schedule message</button>
             <button className="secondary-btn">Save to drafts</button>
             <Link to="/schedule/message" className="secondary-btn">
@@ -30,11 +34,7 @@ function DateAndTimeForm({ addNav }) {
           </section>
         </form>
       </section>
-      <Link
-        to="/today"
-        className="top-secondary-btn"
-        onClick={addNav}
-      >
+      <Link to="/today" className="top-secondary-btn" onClick={addNav}>
         Cancel
       </Link>
     </>

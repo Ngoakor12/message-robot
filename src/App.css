@@ -74,7 +74,7 @@ code {
   position: relative;
   top: 75px;
 }
-.main-section{
+.main-section {
   display: flex;
   /* align-items: center;
   max-width: 1000px; */
@@ -255,7 +255,9 @@ input {
 
 input[type="text"],
 input[type="tel"],
-input[type="email"] {
+input[type="email"],
+input[type="date"],
+input[type="time"] {
   height: 50px;
   padding: 10px 15px;
   margin-top: 10px;
@@ -277,7 +279,12 @@ input[type="email"] {
 
 .form-name label,
 .recipient-contact-wrapper label,
-.form-text-wrapper > label {
+.form-text-wrapper > label,
+.form-subject label,
+.form-message label,
+.form-sender label,
+.form-date label,
+.form-time label {
   font-weight: 700;
 }
 
@@ -289,7 +296,12 @@ input[type="email"] {
 
 .form-name,
 .form-email-input,
-.form-phone-input {
+.form-phone-input,
+.form-subject,
+.form-message,
+.form-sender,
+.form-date,
+.form-time {
   display: flex;
   flex-direction: column;
 }
@@ -338,7 +350,7 @@ input[type="email"] {
   cursor: pointer;
 }
 
-.form-btns.main {
+.form-btns.normal {
   flex-direction: row-reverse;
   justify-content: flex-start;
 }
@@ -347,7 +359,8 @@ input[type="email"] {
   justify-content: flex-start;
 }
 
-.form-btns.main > * {
+.form-btns.normal > * {
+  display: flex;
   width: 100%;
   justify-content: center;
 }
@@ -357,14 +370,13 @@ input[type="email"] {
   width: 100%;
 }
 
-
-.secondary-btn.cancel-btn{
+.secondary-btn.cancel-btn {
   display: flex;
   align-items: center;
   display: none;
 }
 
-.top-secondary-btn{
+.top-secondary-btn {
   display: flex;
   align-items: center;
   color: var(--dark-gray);
@@ -406,20 +418,19 @@ input[type="email"] {
   .schedule-message-btn.bottom-section-btn {
     display: none;
   }
-  .form-btns.main > * {
+  .form-btns.normal > * {
     width: auto;
   }
   .form-btns.exception > * {
     width: auto;
     /* justify-content: center; */
   }
-  .top-secondary-btn{
+  .top-secondary-btn {
     display: none;
   }
-  .secondary-btn.cancel-btn{
+  .secondary-btn.cancel-btn {
     display: block;
   }
-  
 }
 
 /* Larger screens */

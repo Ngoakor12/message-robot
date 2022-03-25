@@ -60,11 +60,7 @@ function RecipientForm({ addNav, isNavRemoved }) {
           </section>
         </form>
       </section>
-      <Link
-        to="/today"
-        className="top-secondary-btn"
-        onClick={addNav}
-      >
+      <Link to="/today" className="top-secondary-btn" onClick={addNav}>
         Cancel
       </Link>
     </>
