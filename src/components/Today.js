@@ -1,5 +1,3 @@
-import ScheduleMessageButton from "./ScheduleMessageButton";
-
 import { Link } from "react-router-dom";
 
 function Today({ removeNav, addNav }) {
