@@ -1,33 +1,61 @@
 import ScheduleMessageButton from "./ScheduleMessageButton";
 
-function Today({ currentUser }) {
+import { Link } from "react-router-dom";
+
+function Today({ removeNav, addNav }) {
   return (
-    <main className="main">
-      <header className="today-header">
-        <div className="header-title">
+    <>
+      <header className="heading">
+        <div className="heading-left">
           <h1 className="heading-title">Today</h1>
           <span className="heading-title-date">23 Jan Mon</span>
         </div>
-        <ScheduleMessageButton/>
+        <Link
+          to="/schedule/recipient"
+          className="primary-btn schedule-message-btn main-section-btn"
+          onClick={removeNav}
+        >
+          Schedule message
+        </Link>
       </header>
+      <hr className="horizontal-divider" />
       <section className="messages">
-        {currentUser.messages.map((message) => {
-          return (
-            <div className="message" key={message.messageId}>
-              <div className="message-state-icon">✅</div>
-              <div className="message-summary">
-                <h2>{message.subject}</h2>
-                <div className="message-date-time">
-                  <span>⌚ {message.time}</span>
-                  {"   "}
-                  <span>📅 {message.date}</span>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
       </section>
-    </main>
+      <Link
+        to="/schedule/recipient"
+        className="primary-btn schedule-message-btn bottom-section-btn"
+        onClick={removeNav}
+      >
+        Schedule message
+      </Link>
+    </>
   );
 }
 

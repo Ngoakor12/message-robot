@@ -1,32 +1,32 @@
 import ScheduleMessageButton from "./ScheduleMessageButton";
 
-function AllMessages({ currentUser }) {
+function AllMessages() {
   return (
-    <main className="main">
-      <header className="today-header">
-        <div className="header-title">
-          <h1 className="heading-title">All messages</h1>
+    <>
+      <header className="heading">
+        <div className="heading-left">
+          <h1 className="heading-title">All Messages</h1>
+          <span className="heading-title-date">23 Jan Mon</span>
         </div>
-        <ScheduleMessageButton />
+        <ScheduleMessageButton buttonPosition="main-section-btn" />
       </header>
+      <hr className="horizontal-divider" />
       <section className="messages">
-        {currentUser.messages.map((message) => {
-          return (
-            <div className="message" key={message.messageId}>
-              <div className="message-state-icon">✅</div>
-              <div className="message-summary">
-                <h2>{message.subject}</h2>
-                <div className="message-date-time">
-                  <span>⌚ {message.time}</span>
-                  {"   "}
-                  <span>📅 {message.date}</span>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
+        <div className="message">
+          <h2>Mom's birthday</h2>
+        </div>
       </section>
-    </main>
+      <ScheduleMessageButton buttonPosition="bottom-section-btn" />
+    </>
   );
 }
 

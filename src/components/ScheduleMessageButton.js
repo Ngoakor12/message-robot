@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-function ScheduleMessageButton() {
+function ScheduleMessageButton({ buttonPosition }) {
   return (
-    <Link to="/schedule-message" className="schedule-message">
-      <span className="schedule-message-icon">📝</span>Schedule message
+    <Link to="/schedule/recipient" className={`schedule-message-btn ${buttonPosition}`}>
+      Schedule message
     </Link>
   );
 }
