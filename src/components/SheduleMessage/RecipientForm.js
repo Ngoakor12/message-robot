@@ -11,14 +11,21 @@ function RecipientForm({ addNav, isNavRemoved }) {
           Cancel
         </Link>
       </header>
-      <hr className="horizontal-divider" />
+      <section className="form-progress">
+        <p className="form-progress-stage progress-stage-done">1</p>
+        <div className="progress-line"></div>
+        <p className="form-progress-stage">2</p>
+        <div className="progress-line"></div>
+        <p className="form-progress-stage">3</p>
+      </section>
+      {/* <hr className="horizontal-divider" /> */}
       <section className="schedule-messages-form">
         <form id="form">
           <h2 className="form-heading">Recipient Details</h2>
           <section className="form-body">
             <div className="form-text-input form-name">
               <label htmlFor="name">Name </label>
-              <input type="text" id="name" placeholder="Name" />
+              <input type="text" id="name" />
             </div>
             <div className="form-text-wrapper">
               <label>Contact method</label>

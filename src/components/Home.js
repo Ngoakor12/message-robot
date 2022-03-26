@@ -28,8 +28,6 @@ function Home() {
     setIsNavRemoved(false);
   }
 
-  console.log(isNavRemoved);
-
   return (
     <>
       <Header toggleNavMenu={toggleNavMenu} isMenuOpen={isMenuOpen} />

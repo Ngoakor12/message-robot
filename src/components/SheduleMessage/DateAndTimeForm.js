@@ -11,7 +11,14 @@ function DateAndTimeForm({ addNav }) {
           Cancel
         </Link>
       </header>
-      <hr className="horizontal-divider" />
+      <section className="form-progress">
+        <p className="form-progress-stage progress-stage-done">1</p>
+        <div className="progress-line progress-line-done"></div>
+        <p className="form-progress-stage progress-stage-done">2</p>
+        <div className="progress-line progress-line-done"></div>
+        <p className="form-progress-stage progress-stage-done">3</p>
+      </section>
+      {/* <hr className="horizontal-divider" /> */}
       <section className="schedule-messages-form">
         <form id="form">
           <h2 className="form-heading">Date and Time</h2>

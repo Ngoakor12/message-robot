@@ -28,8 +28,9 @@ code {
   --background-1: #ffffff;
   --background-2: #fafafa;
   --border-1: #e6e6e6;
-  --border-radius: 10px;
-  --border-radius-2: 8px;
+  --border-radius-10: 10px;
+  --border-radius-8: 8px;
+  --border-radius-4: 4px;
 }
 
 #root {
@@ -63,7 +64,8 @@ code {
   border: 1px solid var(--light-gray);
   width: 37px;
   height: 37px;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-10);
+  cursor: pointer;
 }
 
 .main {
@@ -105,7 +107,7 @@ code {
 
 .nav-item {
   border: 1px solid var(--border-1);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-10);
   padding: 15px;
   text-decoration: none;
   color: var(--dark-gray);
@@ -157,7 +159,7 @@ code {
   background-color: var(--dark-gray);
   text-decoration: none;
   padding: 10px 25px;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-8);
 }
 
 .schedule-message-btn.main-section-btn {
@@ -213,7 +215,7 @@ code {
   display: flex;
   padding: 30px;
   border: 1px solid var(--border-1);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-10);
 }
 .message h2 {
   font-size: 1.8rem;
@@ -242,10 +244,54 @@ button {
   /* margin-bottom: 15px; */
 }
 
+.form-progress{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  /* width: 100%; */
+  margin:55px 0;
+}
+
+.form-progress-stage{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-width: 29px;
+  height: 29px;
+  /* background-color: var(--dark-gray); */
+  border: 1px solid var(--dark-gray);
+  border-radius: var(--border-radius-4);
+}
+
+.progress-stage-done{
+  color: var(--background-1);
+  background-color: var(--dark-gray);
+}
+
+.progress-line{
+  display: inline-block;
+  align-self: center;
+  background-color: var(--dark-gray);
+  height: 1px;
+  width: calc(100% - 87px);
+}
+
+.progress-line-done{
+  border: 2px solid var(--dark-gray);
+
+}
+
 .form-body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  border: 1px solid var(--border-1);
+  border-radius: var(--border-radius-10);
+  padding: 35px;
 }
 
 input {
@@ -263,7 +309,7 @@ input[type="time"] {
   margin-top: 10px;
   border: none;
   border: 1px solid var(--dark-gray);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-10);
 }
 
 #email,
@@ -321,7 +367,9 @@ input[type="time"] {
   background: none;
   border: 0;
   border: 3px solid var(--dark-gray);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-8);
+  display: flex;
+  align-items: center;
 }
 
 .primary-btn {
@@ -331,8 +379,10 @@ input[type="time"] {
   font-weight: 700;
   padding: 10px 25px;
   border: 0;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-8);
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .secondary-btn {
@@ -346,7 +396,7 @@ input[type="time"] {
   background: none;
   border: 0;
   border: 3px solid var(--dark-gray);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-8);
   cursor: pointer;
 }
 
@@ -387,7 +437,7 @@ input[type="time"] {
   background: var(--background-1);
   border: 0;
   border: 3px solid var(--dark-gray);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-8);
   cursor: pointer;
   position: fixed;
   align-self: flex-end;
@@ -413,7 +463,8 @@ input[type="time"] {
 
 @media only screen and (min-width: 730px) {
   .schedule-message-btn.main-section-btn {
-    display: block;
+    display: flex;
+    align-items: center;
   }
   .schedule-message-btn.bottom-section-btn {
     display: none;
@@ -429,7 +480,8 @@ input[type="time"] {
     display: none;
   }
   .secondary-btn.cancel-btn {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 
