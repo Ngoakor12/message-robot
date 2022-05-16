@@ -1,6 +1,11 @@
+import { useContext } from "react";
+
+import { Context } from "../../context";
 import { Link } from "react-router-dom";
 
-function RecipientForm({ addNav, isNavRemoved }) {
+function RecipientForm() {
+  const { addNav } = useContext(Context);
+
   return (
     <>
       <header className="heading">

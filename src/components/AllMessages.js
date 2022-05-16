@@ -1,6 +1,12 @@
+import { useContext } from "react";
+
+import { Context } from "../context";
 import ScheduleMessageButton from "./ScheduleMessageButton";
+import { Link } from "react-router-dom";
 
 function AllMessages() {
+  const { removeNav } = useContext(Context);
+
   return (
     <>
       <header className="heading">
@@ -8,7 +14,13 @@ function AllMessages() {
           <h1 className="heading-title">All Messages</h1>
           <span className="heading-title-date">23 Jan Mon</span>
         </div>
-        <ScheduleMessageButton buttonPosition="main-section-btn" />
+        <Link
+          to="/schedule/recipient"
+          className="primary-btn schedule-message-btn main-section-btn"
+          onClick={removeNav}
+        >
+          Schedule message
+        </Link>
       </header>
       <hr className="horizontal-divider" />
       <section className="messages">

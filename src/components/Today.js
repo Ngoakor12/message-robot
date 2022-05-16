@@ -1,6 +1,11 @@
+import { useContext } from "react";
+
+import { Context } from "../context";
 import { Link } from "react-router-dom";
 
-function Today({ removeNav, addNav }) {
+function Today() {
+  const { removeNav } = useContext(Context);
+
   return (
     <>
       <header className="heading">
