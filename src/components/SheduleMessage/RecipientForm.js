@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function RecipientForm({ addNav, isNavRemoved }) {
+function RecipientForm({ addNav }) {
   return (
     <>
       <header className="heading">
