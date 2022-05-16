@@ -1,7 +1,12 @@
+import { useContext } from "react";
+
+import { Context } from "../context";
 import ScheduleMessageButton from "./ScheduleMessageButton";
 import { Link } from "react-router-dom";
 
-function AllMessages({ removeNav }) {
+function AllMessages() {
+  const { removeNav } = useContext(Context);
+
   return (
     <>
       <header className="heading">

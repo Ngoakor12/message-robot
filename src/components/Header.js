@@ -1,6 +1,10 @@
+import { useContext } from "react";
+
+import { Context } from "../context";
 import { ReactComponent as MenuIcon } from "../assets/MdiMenu.svg";
 
-function Header({ toggleNavMenu }) {
+function Header() {
+  const { toggleNavMenu } = useContext(Context);
   return (
     <header className="main-header">
       <button className="menu-icon" onClick={toggleNavMenu}>

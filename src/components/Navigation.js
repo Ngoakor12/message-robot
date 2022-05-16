@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+
+import { Context } from "../context";
 import { ReactComponent as TodayIcon } from "../assets/IcRoundToday.svg";
 import { ReactComponent as AllMessagesIcon } from "../assets/IcRoundMessage.svg";
 import { ReactComponent as DraftsIcon } from "../assets/IcRoundDrafts.svg";
 
-function Navigation({ isMenuOpen, closeNav, isNavRemoved }) {
+function Navigation() {
+  const { isMenuOpen, isNavRemoved, closeNav } = useContext(Context);
+
   return (
     <nav
       className={
