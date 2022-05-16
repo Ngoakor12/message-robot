@@ -5,6 +5,20 @@ const Context = createContext();
 function ContextProvider({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavRemoved, setIsNavRemoved] = useState(false);
+  const [recipient, setRecipient] = useState({
+    name: "",
+    method: "",
+    contact: "",
+  });
+  const [message, setMessage] = useState({
+    subject: "",
+    message: "",
+    from: "",
+  });
+  const [date, setDate] = useState({
+    time: "",
+    day: "",
+  });
 
   function toggleNavMenu() {
     setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
@@ -18,6 +32,7 @@ function ContextProvider({ children }) {
   function addNav() {
     setIsNavRemoved(false);
   }
+
   return (
     <Context.Provider
       value={{
