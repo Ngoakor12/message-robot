@@ -4,8 +4,17 @@ import { Context } from "../../context";
 import { Link } from "react-router-dom";
 
 function RecipientForm() {
-  const { addNav } = useContext(Context);
+  const { addNav, recipient, setRecipient } = useContext(Context);
 
+  function handleRecipientChange(e) {
+    let { value, name } = e.target;
+    setRecipient((prevRecipient) => ({
+      ...prevRecipient,
+      [name]: value,
+    }));
+  }
+
+  console.log(recipient);
   return (
     <>
       <header className="heading">
@@ -30,7 +39,13 @@ function RecipientForm() {
           <section className="form-body">
             <div className="form-text-input form-name">
               <label htmlFor="name">Name </label>
-              <input type="text" id="name" />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={recipient.name}
+                onChange={handleRecipientChange}
+              />
             </div>
             <div className="form-text-wrapper">
               <label>Contact method</label>
@@ -38,27 +53,37 @@ function RecipientForm() {
                 <div className="form-text-input form-email">
                   <input
                     type="radio"
-                    value="email"
                     id="email"
-                    name="send-method"
+                    name="method"
+                    value="email"
+                    checked={"email"}
+                    onChange={handleRecipientChange}
                   />
                   <label htmlFor="email">Email address </label>
                 </div>
-                <div className="form-text-input form-phone">
+                {/* <div className="form-text-input form-phone">
                   <input
                     type="radio"
                     value="phone"
                     id="phone"
-                    name="send-method"
+                    name="method"
+                    // checked={"phone"}
+                    // onChange={handleRecipientChange}
+                    disabled={true}
                   />
                   <label htmlFor="phone">Phone number </label>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="recipient-contact-wrapper">
-              <label>Recipient contact </label>
+              <label>Recipient {recipient.method || "contact"} </label>
               <div className="form-text-input form-email-input">
-                <input type="email" name="email" />
+                <input
+                  type="email"
+                  name="contact"
+                  value={recipient.contact}
+                  onChange={handleRecipientChange}
+                />
               </div>
               {/* <div className="form-text-input form-phone-input">
                 <input type="tel" name="number" />
