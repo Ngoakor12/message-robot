@@ -4,8 +4,17 @@ import { Context } from "../../context";
 import { Link } from "react-router-dom";
 
 function MessageForm() {
-  const { addNav } = useContext(Context);
+  const { addNav, message, setMessage } = useContext(Context);
 
+  function handleMessageChange(e) {
+    let { value, name } = e.target;
+    setMessage((prevMessage) => ({
+      ...prevMessage,
+      [name]: value,
+    }));
+  }
+
+  console.log(message);
   return (
     <>
       <header className="heading">
@@ -30,15 +39,33 @@ function MessageForm() {
           <section className="form-body">
             <div className="form-text-input form-subject">
               <label htmlFor="subject">Subject </label>
-              <input type="text" id="subject" name="subject" />
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={message.subject}
+                onChange={handleMessageChange}
+              />
             </div>
             <div className="form-text-input form-message">
               <label htmlFor="message">Message </label>
-              <input type="text" id="message" name="message" />
+              <input
+                type="text"
+                id="message"
+                name="body"
+                value={message.body}
+                onChange={handleMessageChange}
+              />
             </div>
             <div className="form-text-input form-sender">
               <label htmlFor="sender">From </label>
-              <input type="text" id="sender" name="sender" />
+              <input
+                type="text"
+                id="sender"
+                name="from"
+                value={message.from}
+                onChange={handleMessageChange}
+              />
             </div>
           </section>
           <section className="form-btns exception">
